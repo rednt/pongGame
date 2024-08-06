@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 
+
+
 public class pongGame extends JPanel{
 
     static final int Width = 640, Height = 480;
@@ -8,7 +10,14 @@ public class pongGame extends JPanel{
     public void paintComponent(Graphics g){
         g.setColor(Color.BLACK);
         g.fillRect(0,0, Width,Height);
+        pongBall.paint(g);
     }
+    private Ball pongBall;
+    public pongGame(){
+        pongBall = new Ball(300,230,3,3,Color.CYAN,3,10);
+    }
+
+
 }
 
 
