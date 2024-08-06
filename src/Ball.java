@@ -18,4 +18,31 @@ public class Ball {
         g.setColor(color);
         g.fillOval(x,y,size,size);
     }
+    public void moveBall(){
+        x += change_x;
+        y += change_y;
+    }
+    public void bounceOffEdges(int top, int bottom){
+        //y value at bottom of the screen
+        if(y > bottom - size){
+            reverseY();
+        }
+        //y value at top of the screen
+        else if(y < top){
+            reverseY();
+        }
+        if(x < 0){
+            reverseX();
+        }
+        else if(x > 640 - size){
+            reverseX();
+        }
+
+    }
+    public void reverseX(){
+        change_x *= -1;
+    }
+    public void reverseY(){
+        change_y *= -1;
+    }
 }

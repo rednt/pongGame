@@ -14,7 +14,11 @@ public class pongGame extends JPanel{
     }
     private Ball pongBall;
     public pongGame(){
-        pongBall = new Ball(300,230,3,3,Color.CYAN,3,10);
+        pongBall = new Ball(300,230,3,3,Color.CYAN,3,14);
+    }
+    public void gameLogic(){
+        pongBall.moveBall();
+        pongBall.bounceOffEdges(0,Height);
     }
 
 
