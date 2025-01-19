@@ -5,9 +5,6 @@ import java.awt.event.ActionEvent;
 public class Main {
     //initialize the frame
     static JFrame frame = new JFrame("Pong");
-
-
-
     public static void main(String[] args) {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -29,9 +26,6 @@ public class Main {
                 game.gameLogic();
 
                 game.repaint();
-
-
-
             }
         });
 
