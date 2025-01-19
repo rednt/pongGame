@@ -17,4 +17,31 @@ public class Paddle {
         g.setColor(color);
         g.fillRect(x,y,PADDLE_WIDTH,height);
     }
+
+    public void moveTowards(int moveToY){
+        int centerY = y + height/2;
+        if(Math.abs(centerY - moveToY) > speed){
+            {
+                if(centerY > moveToY){
+                    //move the paddle up by the speed
+                    y -= speed;
+                }
+
+                if(centerY < moveToY){
+                    //move the paddle down by speed
+                    y += speed;
+                }
+            }
+        }
+    }
+    public boolean checkCollision(Ball b){
+        int rightX = x + PADDLE_WIDTH;
+        int bottomY = y + height;
+        if(b.getX() > (x - b.getSize()) && b.getX() < rightX){
+            //check if Ball is between the y values
+            if(b.getY() > y && b.getY() < bottomY){
+                return true;}
+        }
+        return false;
+    }
 }

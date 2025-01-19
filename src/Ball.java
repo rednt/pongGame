@@ -39,6 +39,19 @@ public class Ball {
         }
 
     }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
     public void reverseX(){
         change_x *= -1;
     }
